@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdoul Service — Accessoires Téléphone Premium CI</title>
+<meta name="description" content="Boutique en ligne d'accessoires téléphone premium à Abidjan. Coques, chargeurs, écouteurs, câbles. Paiement Orange Money & Wave CI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════
+   VARIABLES & RESET
+═══════════════════════════════════════ */
+:root {
+  --gold: #B8860B;
+  --gold2: #DAA520;
+  --gold3: #F5C842;
+  --gold-dim: rgba(184,134,11,0.10);
+  --gold-glow: rgba(184,134,11,0.06);
+  --orange: #E85D04;
+  --wa: #25D366;
+  --wa-dk: #128C3E;
+  --wave: #0096D6;
+  --bg: #FAFAF7;
+  --bg2: #F2F1EC;
+  --white: #FFFFFF;
+  --card: #FFFFFF;
+  --border: #E4E2DA;
+  --border2: #D0CEC5;
+  --text: #1C1A14;
+  --text2: #5A5750;
+  --text3: #9C9A92;
+  --success: #15803D;
+  --danger: #DC2626;
+  --shadow: 0 2px 12px rgba(0,0,0,.07);
+  --shadow2: 0 8px 32px rgba(0,0,0,.12);
+  --shadow3: 0 24px 60px rgba(0,0,0,.18);
+  --rad: 14px;
+  --rad2: 20px;
+  --rad3: 28px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:'DM Sans',sans-serif}
+img{max-width:100%;display:block}
+
+/* ═══════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════ */
+.serif{font-family:'Cormorant Garamond',serif}
+.gold{color:var(--gold)}
+.muted{color:var(--text2)}
+.hide{display:none!important}
+
+/* ═══════════════════════════════════════
+   TOP BAR
+═══════════════════════════════════════ */
+.topbar {
+  background: var(--text);
+  color: rgba(255,255,255,.75);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  padding: .45rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.topbar-live { display:flex;align-items:center;gap:.5rem }
+.live-dot { width:6px;height:6px;border-radius:50%;background:var(--wa);animation:pulse2 2s infinite }
+@keyframes pulse2{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.topbar-datetime { color:var(--gold3);font-weight:500 }
+.topbar-right { display:flex;align-items:center;gap:1.2rem }
+
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 16px rgba(0,0,0,.06);
+}
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Logo */
+.logo { display:flex;align-items:center;gap:.7rem;flex-shrink:0 }
+.logo-mark {
+  width: 42px; height: 42px;
+  background: var(--text);
+  border-radius: 12px;
+  display: flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:700;color:var(--gold3);
+  letter-spacing:-.02em;
+}
+.logo-text-wrap { display:flex;flex-direction:column;line-height:1.1 }
+.logo-name { font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--text);letter-spacing:-.01em }
+.logo-tagline { font-size:.6rem;color:var(--orange);letter-spacing:.15em;text-transform:uppercase;font-weight:600 }
+
+/* Search */
+.search-wrap { flex:1;max-width:540px;margin:0 auto;position:relative }
+.search-container {
+  display:flex;align-items:center;
+  background:var(--bg2);
+  border:1.5px solid var(--border);
+  border-radius:50px;
+  padding:0 6px 0 18px;
+  height:46px;
+  transition:border-color .25s,box-shadow .25s,background .25s;
+}
+.search-container:focus-within {
+  background:var(--white);
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(184,134,11,.1);
+}
+.search-icon { color:var(--text3);flex-shrink:0;font-size:1rem }
+.search-input {
+  flex:1;border:none;background:transparent;outline:none;
+  font-size:.9rem;color:var(--text);padding:0 10px;
+  font-family:'DM Sans',sans-serif;
+  caret-color:var(--gold);
+}
+.search-input::placeholder{color:var(--text3)}
+.search-clear {
+  display:none;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;border:none;
+  background:var(--border);color:var(--text2);font-size:.8rem;
+  transition:all .2s;flex-shrink:0;
+}
+.search-clear.vis{display:flex}
+.search-clear:hover{background:var(--border2);color:var(--text)}
+.search-btn {
+  height:36px;padding:0 18px;margin:5px;
+  background:var(--text);color:var(--white);
+  border:none;border-radius:50px;
+  font-size:.82rem;font-weight:600;
+  transition:background .2s,transform .15s;
+  white-space:nowrap;flex-shrink:0;
+}
+.search-btn:hover{background:#333;transform:scale(1.02)}
+
+/* Search dropdown */
+.search-dropdown {
+  position:absolute;top:calc(100% + 8px);left:0;right:0;
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--rad2);overflow:hidden;
+  z-index:400;
+  opacity:0;transform:translateY(-8px);pointer-events:none;
+  transition:opacity .2s,transform .2s;
+  box-shadow:var(--shadow2);
+}
+.search-dropdown.open{opacity:1;transform:translateY(0);pointer-events:auto}
+.sdrop-head{padding:10px 16px 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.sdrop-label{font-size:.68rem;font-weight:600;color:var(--text3);letter-spacing:.08em;text-transform:uppercase}
+.sdrop-count{font-size:.68rem;color:var(--gold);background:var(--gold-dim);padding:2px 8px;border-radius:20px;font-weight:600}
+.sdrop-item{display:flex;align-items:center;gap:10px;padding:8px 16px;cursor:pointer;transition:background .12s;border-bottom:1px solid rgba(0,0,0,.03)}
+.sdrop-item:last-child{border-bottom:none}
+.sdrop-item:hover{background:rgba(184,134,11,.04)}
+.sdrop-thumb{width:36px;height:36px;border-radius:10px;background:var(--bg2);border:1px solid var(--border);overflow:hidden;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.sdrop-thumb img{width:100%;height:100%;object-fit:contain;padding:2px}
+.sdrop-body{flex:1;min-width:0}
+.sdrop-name{font-size:.85rem;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sdrop-meta{font-size:.7rem;color:var(--text3)}
+.sdrop-tag{font-size:.65rem;font-weight:600;padding:2px 7px;border-radius:5px;flex-shrink:0}
+.sdrop-arrow{color:var(--border2);font-size:.9rem;opacity:0;transition:opacity .15s,transform .15s;transform:translateX(-4px)}
+.sdrop-item:hover .sdrop-arrow{opacity:1;transform:translateX(0)}
+.sdrop-footer{padding:10px 16px;background:var(--bg2);border-top:1px solid var(--border)}
+.sdrop-trends{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.sdrop-trend{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:4px 10px;font-size:.73rem;color:var(--text2);cursor:pointer;transition:all .18s}
+.sdrop-trend:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Header actions */
+.header-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+.hbtn {
+  display:flex;align-items:center;justify-content:center;gap:.35rem;
+  padding:.42rem .9rem;border-radius:50px;border:none;
+  font-size:.78rem;font-weight:600;
+  transition:all .2s;white-space:nowrap;
+}
+.hbtn-wa{background:var(--wa);color:#fff}
+.hbtn-wa:hover{background:var(--wa-dk)}
+.hbtn-cart{background:var(--text);color:#fff;position:relative}
+.hbtn-cart:hover{background:#333}
+.cart-badge{
+  position:absolute;top:-6px;right:-6px;
+  background:var(--orange);color:#fff;
+  border-radius:50%;width:20px;height:20px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.65rem;font-weight:700;
+  border:2px solid var(--white);
+  transition:transform .2s;
+}
+.cart-badge.pop{animation:pop .3s ease}
+@keyframes pop{0%{transform:scale(1)}50%{transform:scale(1.5)}100%{transform:scale(1)}}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  background: var(--text);
+  padding: 3.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content:'';position:absolute;inset:0;
+  background: radial-gradient(ellipse 80% 80% at 70% 50%, rgba(184,134,11,.12) 0%, transparent 65%);
+}
+.hero::after {
+  content:'';position:absolute;
+  top:-60px;right:-60px;
+  width:320px;height:320px;
+  border:1px solid rgba(184,134,11,.15);
+  border-radius:50%;
+}
+.hero-inner{max-width:1320px;margin:0 auto;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-kicker{display:inline-flex;align-items:center;gap:.5rem;background:rgba(184,134,11,.15);border:1px solid rgba(184,134,11,.25);border-radius:50px;padding:.3rem 1rem;font-size:.72rem;color:var(--gold3);font-weight:600;letter-spacing:.06em;margin-bottom:1.2rem}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:700;color:#fff;line-height:1.12;margin-bottom:1rem}
+.hero h1 em{font-style:normal;color:var(--gold3)}
+.hero-sub{color:rgba(255,255,255,.6);font-size:.95rem;line-height:1.75;margin-bottom:1.8rem;max-width:420px}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-cta-primary{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold2);color:var(--text);font-weight:700;padding:.8rem 1.8rem;border-radius:50px;border:none;font-size:.9rem;transition:all .25s}
+.hero-cta-primary:hover{background:var(--gold3);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,134,11,.35)}
+.hero-cta-wa{display:inline-flex;align-items:center;gap:.5rem;background:var(--wa);color:#fff;font-weight:700;padding:.8rem 1.8rem;border-radius:50px;border:none;font-size:.9rem;transition:all .25s}
+.hero-cta-wa:hover{background:var(--wa-dk);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2rem;margin-top:2rem}
+.hstat{color:rgba(255,255,255,.5)}
+.hstat strong{display:block;font-size:1.4rem;font-weight:700;color:var(--gold3);font-family:'Cormorant Garamond',serif}
+.hstat span{font-size:.72rem;letter-spacing:.05em}
+.hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
+.hero-products-preview{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.hpp{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--rad);padding:1rem;text-align:center}
+.hpp-emoji{font-size:2.5rem;margin-bottom:.4rem}
+.hpp-name{font-size:.72rem;color:rgba(255,255,255,.6)}
+.hpp-price{font-size:.85rem;font-weight:600;color:var(--gold3)}
+
+/* ═══════════════════════════════════════
+   CONTACT BANNER
+═══════════════════════════════════════ */
+.contact-bar{background:#F0FDF4;border-bottom:1px solid rgba(37,211,102,.2);padding:.6rem 2rem}
+.contact-bar-inner{max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+.cb-left{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.cb-online{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:var(--success);font-weight:600}
+.cb-dot2{width:6px;height:6px;border-radius:50%;background:var(--wa);animation:pulse2 2s infinite}
+.cb-phone{font-weight:700;color:var(--wa-dk);font-size:.85rem}
+.cb-hours{font-size:.72rem;color:var(--text3)}
+.cb-right{display:flex;gap:.5rem}
+.cb-btn2{display:flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border-radius:50px;font-size:.76rem;font-weight:600;border:none;transition:all .18s}
+.cb-btn-wa{background:var(--wa);color:#fff}
+.cb-btn-wa:hover{background:var(--wa-dk)}
+.cb-btn-call{background:transparent;border:1.5px solid rgba(37,211,102,.4)!important;color:var(--wa-dk)}
+
+/* ═══════════════════════════════════════
+   SECTION LAYOUT
+═══════════════════════════════════════ */
+.section{padding:2rem 2rem}
+.section-inner{max-width:1320px;margin:0 auto}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:1.2rem;flex-wrap:wrap;gap:.5rem}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700}
+.section-title span{color:var(--gold)}
+.section-sub{color:var(--text2);font-size:.85rem;margin-top:.2rem}
+.see-all{font-size:.82rem;color:var(--text2);display:flex;align-items:center;gap:.3rem;transition:color .18s}
+.see-all:hover{color:var(--gold)}
+
+/* ═══════════════════════════════════════
+   CATEGORIES TABS
+═══════════════════════════════════════ */
+.cats-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem;padding:.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.cat-pill{
+  display:flex;align-items:center;gap:.4rem;
+  padding:.4rem 1rem;border-radius:50px;
+  border:1.5px solid var(--border);
+  background:var(--white);color:var(--text2);
+  font-size:.8rem;font-weight:500;
+  transition:all .18s;
+}
+.cat-pill:hover{border-color:var(--gold);color:var(--gold)}
+.cat-pill.active{background:var(--text);border-color:var(--text);color:#fff;font-weight:600}
+
+/* ═══════════════════════════════════════
+   SEARCH STATUS BAR
+═══════════════════════════════════════ */
+.status-bar{min-height:36px;display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;flex-wrap:wrap}
+.status-chip{display:inline-flex;align-items:center;gap:.4rem;background:var(--gold-dim);border:1px solid rgba(184,134,11,.2);border-radius:20px;padding:4px 12px;font-size:.76rem;color:var(--gold);font-weight:600}
+.status-chip .cnt{background:var(--gold);color:#fff;border-radius:20px;padding:1px 7px;font-size:.68rem;font-weight:700}
+.status-clear{background:none;border:none;color:var(--text3);font-size:.76rem;text-decoration:underline;font-family:'DM Sans',sans-serif}
+.status-clear:hover{color:var(--text)}
+
+/* ═══════════════════════════════════════
+   PRODUCT GRID
+═══════════════════════════════════════ */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+
+.product-card {
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--rad2);
+  overflow:hidden;
+  transition:transform .28s,border-color .28s,box-shadow .28s;
+  position:relative;
+  box-shadow:var(--shadow);
+}
+.product-card:hover {
+  transform:translateY(-6px);
+  border-color:rgba(184,134,11,.4);
+  box-shadow:0 16px 48px rgba(0,0,0,.12);
+}
+.product-card.match{border-color:rgba(184,134,11,.5);box-shadow:0 0 0 2px rgba(184,134,11,.12)}
+
+/* Image zone */
+.prod-img {
+  width:100%;height:210px;
+  background:linear-gradient(135deg,#F8F7F2,#EDE9DF);
+  display:flex;align-items:center;justify-content:center;
+  cursor:zoom-in;position:relative;overflow:hidden;
+}
+.prod-img img{width:100%;height:100%;object-fit:contain;padding:18px;transition:transform .35s}
+.product-card:hover .prod-img img{transform:scale(1.06)}
+.prod-img .prod-emoji{font-size:3.8rem;transition:transform .35s}
+.product-card:hover .prod-img .prod-emoji{transform:scale(1.08)}
+.zoom-icon{position:absolute;bottom:.7rem;right:.7rem;background:rgba(28,26,20,.6);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;opacity:0;transition:opacity .2s;pointer-events:none}
+.prod-img:hover .zoom-icon{opacity:1}
+
+/* Badges */
+.badge{position:absolute;top:.65rem;left:.65rem;font-size:.62rem;font-weight:700;padding:.18rem .5rem;border-radius:5px;letter-spacing:.04em;z-index:2}
+.badge-new{background:var(--orange);color:#fff}
+.badge-promo{background:var(--danger);color:#fff}
+.badge-stock{position:absolute;top:.65rem;right:.65rem;background:rgba(21,128,61,.9);color:#fff;font-size:.6rem;font-weight:700;padding:.15rem .4rem;border-radius:4px;z-index:2}
+
+/* Product info */
+.prod-info{padding:.9rem}
+.prod-cat{font-size:.68rem;font-weight:600;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.25rem}
+.prod-name{font-weight:600;font-size:.9rem;color:var(--text);margin-bottom:.18rem;cursor:pointer;transition:color .15s}
+.prod-name:hover{color:var(--gold)}
+.prod-brand{font-size:.72rem;color:var(--text3);margin-bottom:.35rem}
+.prod-stars{font-size:.68rem;color:var(--gold2);margin-bottom:.4rem}
+.prod-price-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.6rem}
+.prod-price{font-size:1.05rem;font-weight:700;color:var(--gold)}
+.prod-old{font-size:.72rem;color:var(--text3);text-decoration:line-through}
+.prod-eco{font-size:.65rem;font-weight:700;background:rgba(21,128,61,.1);color:var(--success);padding:2px 6px;border-radius:4px}
+.prod-btns{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.btn-cart{background:var(--text);color:#fff;border:none;border-radius:9px;padding:.48rem;font-weight:600;font-size:.76rem;transition:background .18s}
+.btn-cart:hover{background:#333}
+.btn-wa-prod{background:var(--wa);color:#fff;border:none;border-radius:9px;padding:.48rem;font-weight:600;font-size:.76rem;transition:background .18s;display:flex;align-items:center;justify-content:center;gap:.2rem}
+.btn-wa-prod:hover{background:var(--wa-dk)}
+
+/* No results */
+.no-results{grid-column:1/-1;text-align:center;padding:3rem;color:var(--text2)}
+.no-results-icon{font-size:3rem;margin-bottom:.8rem}
+.no-results p{font-size:.9rem;margin-bottom.5rem}
+.no-results-tags{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1rem}
+.no-results-tag{background:var(--white);border:1.5px solid var(--border);border-radius:50px;padding:.28rem .8rem;font-size:.78rem;color:var(--gold);cursor:pointer;transition:all .18s}
+.no-results-tag:hover{background:var(--gold-dim);border-color:var(--gold)}
+
+/* ═══════════════════════════════════════
+   FEATURES STRIP
+═══════════════════════════════════════ */
+.features-strip{background:var(--text);padding:1.5rem 2rem}
+.features-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.feat{display:flex;align-items:center;gap:.8rem;padding:.5rem}
+.feat-icon{font-size:1.6rem;flex-shrink:0}
+.feat-text strong{display:block;font-size:.82rem;font-weight:600;color:#fff}
+.feat-text span{font-size:.72rem;color:rgba(255,255,255,.5)}
+
+/* ═══════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════ */
+.testimonials-section{background:var(--bg2);padding:2.5rem 2rem}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;max-width:1320px;margin:1.2rem auto 0}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--rad2);padding:1.2rem;box-shadow:var(--shadow)}
+.testi-stars{color:var(--gold2);font-size:.85rem;margin-bottom:.6rem}
+.testi-text{font-size:.85rem;color:var(--text2);line-height:1.7;margin-bottom:.8rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.6rem}
+.testi-avatar{width:36px;height:36px;border-radius:50%;background:var(--text);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:700;color:var(--gold3);flex-shrink:0}
+.testi-name{font-size:.8rem;font-weight:600;color:var(--text)}
+.testi-loc{font-size:.7rem;color:var(--text3)}
+
+/* ═══════════════════════════════════════
+   PAYMENT SECTION
+═══════════════════════════════════════ */
+.pay-section{padding:2rem 2rem;border-top:1px solid var(--border)}
+.pay-section-inner{max-width:1320px;margin:0 auto;text-align:center}
+.pay-methods{display:flex;align-items:center;justify-content:center;gap:1.5rem;margin-top:1.2rem;flex-wrap:wrap}
+.pay-method{display:flex;align-items:center;gap:.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--rad);padding:.7rem 1.2rem;font-weight:600;font-size:.85rem;box-shadow:var(--shadow)}
+.pay-method.orange{border-color:rgba(232,93,4,.3);color:var(--orange)}
+.pay-method.wave{border-color:rgba(0,150,214,.3);color:var(--wave)}
+.pay-method.whatsapp{border-color:rgba(37,211,102,.3);color:var(--wa-dk)}
+
+/* ═══════════════════════════════════════
+   PRODUCT DETAIL MODAL
+═══════════════════════════════════════ */
+.modal-overlay {
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.65);z-index:600;
+  align-items:center;justify-content:center;
+  padding:1rem;backdrop-filter:blur(6px);
+}
+.modal-overlay.open{display:flex}
+
+/* Product Zoom Modal */
+.product-modal {
+  background:var(--white);border-radius:var(--rad3);
+  width:100%;max-width:840px;max-height:92vh;
+  overflow-y:auto;
+  box-shadow:var(--shadow3);
+  animation:modalIn .3s ease;
+  display:grid;grid-template-columns:1fr 1fr;
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+.pm-img-side{background:linear-gradient(135deg,#F5F3EE,#EAE5D8);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem;position:relative;border-radius:var(--rad3) 0 0 var(--rad3);min-height:400px}
+.pm-close{position:absolute;top:.8rem;right:.8rem;background:rgba(255,255,255,.9);border:1px solid var(--border);color:var(--text2);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;transition:all .18s;z-index:2}
+.pm-close:hover{background:var(--white);color:var(--text)}
+.pm-badges-wrap{position:absolute;top:.8rem;left:.8rem;display:flex;flex-direction:column;gap:.3rem}
+.pm-img-main{max-width:100%;max-height:260px;object-fit:contain;transition:transform .4s}
+.pm-img-main:hover{transform:scale(1.06)}
+.pm-emoji-main{font-size:7rem}
+
+.pm-info-side{padding:2rem;display:flex;flex-direction:column;gap:.9rem;overflow-y:auto}
+.pm-cat{font-size:.7rem;font-weight:600;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
+.pm-name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;line-height:1.2}
+.pm-brand{font-size:.82rem;color:var(--text3)}
+.pm-rating{display:flex;align-items:center;gap:.5rem;font-size:.82rem}
+.pm-stars-val{color:var(--gold2)}
+.pm-rating-txt{color:var(--text3)}
+.pm-price-block{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rad);padding:.9rem 1rem;display:flex;align-items:center;justify-content:space-between}
+.pm-price{font-size:1.7rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif}
+.pm-price-right{text-align:right}
+.pm-old{font-size:.8rem;color:var(--text3);text-decoration:line-through}
+.pm-eco-badge{background:rgba(21,128,61,.1);color:var(--success);font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:5px;margin-top:.2rem;display:inline-block}
+.pm-desc{font-size:.85rem;color:var(--text2);line-height:1.75}
+.pm-specs{border:1px solid var(--border);border-radius:var(--rad);overflow:hidden}
+.pm-spec-row{display:flex;align-items:center;padding:.55rem .9rem;border-bottom:1px solid var(--border);font-size:.8rem}
+.pm-spec-row:last-child{border-bottom:none}
+.pm-spec-row:nth-child(even){background:var(--bg2)}
+.pm-spec-label{color:var(--text3);width:100px;flex-shrink:0;font-weight:500}
+.pm-spec-val{font-weight:500;color:var(--text)}
+.pm-spec-val.ok{color:var(--success)}
+.pm-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.pm-btn-cart{background:var(--text);color:#fff;border:none;border-radius:11px;padding:.75rem;font-weight:700;font-size:.88rem;transition:background .18s}
+.pm-btn-cart:hover{background:#333}
+.pm-btn-wa{background:var(--wa);color:#fff;border:none;border-radius:11px;padding:.75rem;font-weight:700;font-size:.88rem;transition:background .18s;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.pm-btn-wa:hover{background:var(--wa-dk)}
+
+/* ═══════════════════════════════════════
+   CART MODAL
+═══════════════════════════════════════ */
+.cart-modal {
+  background:var(--white);border-radius:var(--rad3);
+  width:100%;max-width:520px;max-height:92vh;overflow-y:auto;
+  padding:1.6rem;box-shadow:var(--shadow3);
+  animation:modalIn .3s ease;
+}
+.cart-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.cart-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700}
+.modal-close-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text2);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;transition:all .18s}
+.modal-close-btn:hover{background:var(--border);color:var(--text)}
+.cart-empty{text-align:center;padding:2.5rem;color:var(--text3)}
+.cart-empty-icon{font-size:2.5rem;margin-bottom:.6rem}
+.cart-item{display:flex;align-items:center;gap:.8rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.cart-item:last-of-type{border-bottom:none}
+.cart-item-img{width:48px;height:48px;border-radius:10px;overflow:hidden;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.6rem}
+.cart-item-img img{width:100%;height:100%;object-fit:contain;padding:3px}
+.cart-item-body{flex:1;min-width:0}
+.cart-item-name{font-weight:600;font-size:.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cart-item-price{font-size:.78rem;color:var(--gold);font-weight:600}
+.cart-qty-row{display:flex;align-items:center;gap:.4rem}
+.qty-btn{background:var(--bg2);border:1px solid var(--border);color:var(--text);width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background .15s}
+.qty-btn:hover{background:var(--border)}
+.qty-val{font-size:.85rem;min-width:20px;text-align:center;font-weight:600}
+.delete-btn{background:none;border:none;color:var(--text3);font-size:.85rem;margin-left:.3rem;transition:color .15s}
+.delete-btn:hover{color:var(--danger)}
+.cart-footer{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)}
+.cart-summary{display:flex;flex-direction:column;gap:.3rem;margin-bottom:1rem}
+.cart-summary-row{display:flex;justify-content:space-between;font-size:.82rem;color:var(--text2)}
+.cart-total-row{display:flex;justify-content:space-between;font-weight:700;font-size:1rem;padding-top:.5rem;border-top:1px solid var(--border);margin-top:.3rem}
+.cart-total-amt{color:var(--gold);font-size:1.1rem;font-family:'Cormorant Garamond',serif}
+
+/* Payment step */
+.pay-step-label{font-size:.8rem;font-weight:600;color:var(--text2);margin:.8rem 0 .5rem}
+.pay-options{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.7rem}
+.pay-opt{background:var(--bg2);border:2px solid var(--border);border-radius:var(--rad);padding:.75rem;cursor:pointer;text-align:center;transition:all .25s}
+.pay-opt:hover{transform:translateY(-1px)}
+.pay-opt.orange:hover,.pay-opt.orange.sel{border-color:var(--orange);background:rgba(232,93,4,.05)}
+.pay-opt.wave2:hover,.pay-opt.wave2.sel{border-color:var(--wave);background:rgba(0,150,214,.05)}
+.pay-opt-logo{font-size:1.6rem;display:block;margin-bottom:.2rem}
+.pay-opt-name{font-weight:700;font-size:.8rem}
+.pay-opt-sub{font-size:.65rem;color:var(--text3)}
+.pay-opt.orange .pay-opt-name{color:var(--orange)}
+.pay-opt.wave2 .pay-opt-name{color:var(--wave)}
+.phone-field{width:100%;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rad);padding:.6rem 1rem;font-size:.88rem;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;margin-bottom:.7rem;transition:border-color .2s}
+.phone-field:focus{border-color:var(--gold);background:var(--white)}
+.checkout-btns{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.checkout-btn{width:100%;padding:.75rem;border:none;border-radius:var(--rad);font-weight:700;font-size:.85rem;transition:all .22s}
+.checkout-btn:hover{transform:translateY(-1px)}
+.ckbtn-orange{background:linear-gradient(135deg,#E85D04,#FF8C00);color:#fff}
+.ckbtn-wave{background:linear-gradient(135deg,#0096D6,#0077B6);color:#fff}
+.ckbtn-def{background:var(--text);color:#fff}
+.ckbtn-wa2{background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;gap:.4rem}
+.ckbtn-wa2:hover{background:var(--wa-dk)}
+
+/* Success modal */
+.success-modal{background:var(--white);border-radius:var(--rad3);width:100%;max-width:440px;padding:2rem;text-align:center;box-shadow:var(--shadow3);animation:modalIn .3s ease}
+.success-icon{font-size:4rem;margin-bottom:.8rem}
+.success-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--success);margin-bottom:.4rem}
+.success-msg{color:var(--text2);font-size:.85rem;line-height:1.7;margin-bottom:.8rem}
+.success-ref{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:.55rem;font-family:monospace;font-size:.78rem;color:var(--gold);margin-bottom:.8rem}
+.success-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.8rem}
+
+/* ═══════════════════════════════════════
+   FLOATING WA
+═══════════════════════════════════════ */
+.wa-float{position:fixed;bottom:1.8rem;right:1.8rem;z-index:300}
+.wa-float-btn{background:var(--wa);color:#fff;border:none;border-radius:50px;padding:.7rem 1.2rem;font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:.45rem;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .25s}
+.wa-float-btn:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+.wa-ping{width:10px;height:10px;border-radius:50%;background:#fff;animation:pulse2 1.8s infinite}
+
+/* ═══════════════════════════════════════
+   TOAST
+═══════════════════════════════════════ */
+.toast-container{position:fixed;bottom:5.5rem;right:1.8rem;z-index:500;display:flex;flex-direction:column;gap:.5rem}
+.toast{background:var(--white);border:1px solid var(--border);border-left:3px solid var(--success);border-radius:12px;padding:.7rem 1.1rem;font-size:.82rem;color:var(--text);box-shadow:var(--shadow2);transform:translateX(120%);opacity:0;transition:all .35s;max-width:260px}
+.toast.show{transform:translateX(0);opacity:1}
+.toast.error{border-left-color:var(--danger)}
+.toast.info{border-left-color:var(--gold)}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:var(--text);color:rgba(255,255,255,.6);padding:2.5rem 2rem 1.5rem}
+.footer-inner{max-width:1320px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+.footer-brand .logo-name{color:#fff;font-size:1.4rem}
+.footer-brand .logo-tagline{color:var(--gold3)}
+.footer-brand p{font-size:.8rem;line-height:1.75;margin-top:.8rem;color:rgba(255,255,255,.5)}
+.footer-col h4{font-size:.82rem;font-weight:600;color:#fff;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.8rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.footer-col ul li a{font-size:.8rem;color:rgba(255,255,255,.5);transition:color .15s}
+.footer-col ul li a:hover{color:var(--gold3)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-bottom p{font-size:.75rem}
+.footer-pay{display:flex;align-items:center;gap:.8rem}
+.fpay{font-size:.72rem;font-weight:600;padding:.25rem .7rem;border-radius:5px}
+.fpay-orange{background:var(--orange);color:#fff}
+.fpay-wave{background:var(--wave);color:#fff}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .product-modal{grid-template-columns:1fr;max-width:96vw}
+  .pm-img-side{border-radius:var(--rad3) var(--rad3) 0 0;min-height:200px;padding:1.5rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .header-inner{padding:0 1rem;height:64px;gap:.6rem}
+  .logo-tagline{display:none}
+  .hero{padding:2rem 1rem}
+  .hero h1{font-size:2.2rem}
+  .hero-stats{gap:1.2rem}
+  .topbar{padding:.4rem 1rem}
+  .section{padding:1.5rem 1rem}
+  .footer-grid{grid-template-columns:1fr}
+  .product-modal{grid-template-columns:1fr}
+  .pm-actions{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOPBAR ═══ -->
+<div class="topbar">
+  <div class="topbar-live">
+    <div class="live-dot"></div>
+    <span>Boutique en ligne — Abidjan, Côte d'Ivoire</span>
+  </div>
+  <div class="topbar-datetime" id="datetime">⏰ Chargement...</div>
+  <div class="topbar-right">
+    <span>📦 Livraison 24–48h</span>
+    <span>🔒 Paiement sécurisé</span>
+  </div>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">A</div>
+      <div class="logo-text-wrap">
+        <span class="logo-name">Abdoul Service</span>
+        <span class="logo-tagline">Accessoires Téléphone · CI</span>
+      </div>
+    </div>
+
+    <div class="search-wrap">
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input class="search-input" id="searchInput" type="search"
+          placeholder="Rechercher un produit, une marque…"
+          autocomplete="off" spellcheck="false">
+        <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+        <button class="search-btn" onclick="doSearch()">Rechercher</button>
+      </div>
+      <div class="search-dropdown" id="searchDropdown">
+        <div class="sdrop-head">
+          <span class="sdrop-label" id="sdropLabel">Suggestions</span>
+          <span class="sdrop-count" id="sdropCount">0</span>
+        </div>
+        <div id="sdropItems"></div>
+        <div class="sdrop-footer">
+          <div class="sdrop-label">Tendances</div>
+          <div class="sdrop-trends" style="margin-top:6px">
+            <span class="sdrop-trend" onclick="qs('airpods')">🎧 AirPods Pro</span>
+            <span class="sdrop-trend" onclick="qs('coque iphone')">📱 Coque iPhone</span>
+            <span class="sdrop-trend" onclick="qs('chargeur rapide')">⚡ Chargeur 65W</span>
+            <span class="sdrop-trend" onclick="qs('batterie')">🔋 Powerbank</span>
+            <span class="sdrop-trend" onclick="qs('verre')">🔒 Verre trempé</span>
+            <span class="sdrop-trend" onclick="qs('cable')">🔌 Câbles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="hbtn hbtn-wa" onclick="openWA()">💬 WhatsApp</button>
+      <button class="hbtn hbtn-cart" onclick="openCart()">
+        🛒 Panier
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-kicker">✨ N°1 Accessoires Téléphone en Côte d'Ivoire</div>
+      <h1>Les meilleurs <em>accessoires</em><br>pour votre smartphone</h1>
+      <p class="hero-sub">Coques, chargeurs, écouteurs, câbles et plus encore. Qualité premium, prix accessibles. Livraison rapide à Abidjan.</p>
+      <div class="hero-ctas">
+        <button class="hero-cta-primary" onclick="document.querySelector('.section').scrollIntoView({behavior:'smooth'})">
+          🛍️ Voir les produits
+        </button>
+        <button class="hero-cta-wa" onclick="openWA()">💬 Commander sur WhatsApp</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat"><strong>500+</strong><span>PRODUITS</span></div>
+        <div class="hstat"><strong>1 200+</strong><span>CLIENTS</span></div>
+        <div class="hstat"><strong>4.9★</strong><span>NOTE MOYENNE</span></div>
+        <div class="hstat"><strong>24h</strong><span>LIVRAISON</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-products-preview">
+        <div class="hpp"><div class="hpp-emoji">🎧</div><div class="hpp-name">AirPods Pro</div><div class="hpp-price">95 000 FCFA</div></div>
+        <div class="hpp"><div class="hpp-emoji">⚡</div><div class="hpp-name">Chargeur 65W</div><div class="hpp-price">8 500 FCFA</div></div>
+        <div class="hpp"><div class="hpp-emoji">📱</div><div class="hpp-name">Coque iPhone 15</div><div class="hpp-price">4 500 FCFA</div></div>
+        <div class="hpp"><div class="hpp-emoji">🔋</div><div class="hpp-name">Powerbank 20K</div><div class="hpp-price">18 000 FCFA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<div class="features-strip">
+  <div class="features-inner">
+    <div class="feat"><div class="feat-icon">🚚</div><div class="feat-text"><strong>Livraison rapide</strong><span>24–48h à Abidjan</span></div></div>
+    <div class="feat"><div class="feat-icon">🔒</div><div class="feat-text"><strong>Paiement sécurisé</strong><span>Orange Money & Wave</span></div></div>
+    <div class="feat"><div class="feat-icon">✅</div><div class="feat-text"><strong>Produits garantis</strong><span>Qualité certifiée</span></div></div>
+    <div class="feat"><div class="feat-icon">💬</div><div class="feat-text"><strong>Support WhatsApp</strong><span>Réponse en 5 min</span></div></div>
+    <div class="feat"><div class="feat-icon">🔄</div><div class="feat-text"><strong>Retour facile</strong><span>7 jours garanti</span></div></div>
+  </div>
+</div>
+
+<!-- ═══ CONTACT BANNER ═══ -->
+<div class="contact-bar">
+  <div class="contact-bar-inner">
+    <div class="cb-left">
+      <div class="cb-online"><div class="cb-dot2"></div>En ligne</div>
+      <span style="font-size:.82rem;color:#444">Commandez directement via WhatsApp :</span>
+      <span class="cb-phone">📱 +225 07 89 59 64 49</span>
+      <span class="cb-hours">Lun–Sam 8h–20h · Réponse rapide garantie</span>
+    </div>
+    <div class="cb-right">
+      <button class="cb-btn2 cb-btn-wa" onclick="openWA()">💬 Envoyer un message</button>
+      <a href="tel:+22507895964449"><button class="cb-btn2 cb-btn-call" style="border:1.5px solid rgba(37,211,102,.4)">📞 Appeler</button></a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PRODUCTS SECTION ═══ -->
+<section class="section" id="products">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title serif">Nos <span>Produits</span></div>
+        <div class="section-sub">Cliquez sur un produit pour voir ses détails · Tous les prix en FCFA</div>
+      </div>
+    </div>
+
+    <div class="cats-bar" id="catFilter">
+      <button class="cat-pill active" data-cat="all">Tous les produits</button>
+      <button class="cat-pill" data-cat="Coques">📱 Coques & Étuis</button>
+      <button class="cat-pill" data-cat="Chargeurs">⚡ Chargeurs</button>
+      <button class="cat-pill" data-cat="Audio">🎧 Audio</button>
+      <button class="cat-pill" data-cat="Câbles">🔌 Câbles</button>
+      <button class="cat-pill" data-cat="Écrans">🔒 Protection écran</button>
+      <button class="cat-pill" data-cat="Batteries">🔋 Batteries</button>
+    </div>
+
+    <div class="status-bar" id="statusBar"></div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials-section">
+  <div class="section-inner" style="max-width:1320px;margin:0 auto">
+    <div class="section-header">
+      <div>
+        <div class="section-title serif">Ce que disent nos <span>clients</span></div>
+        <div class="section-sub">Plus de 1 200 clients satisfaits à Abidjan</div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Livraison ultra rapide, les AirPods Pro sont authentiques et le prix est bien meilleur qu'ailleurs. Je recommande vivement Abdoul Service !"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">KD</div>
+          <div><div class="testi-name">Konan Diallo</div><div class="testi-loc">📍 Cocody, Abidjan</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Le chargeur 65W fonctionne parfaitement. J'ai commandé sur WhatsApp, payé via Orange Money et reçu le lendemain. Service top !"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">FA</div>
+          <div><div class="testi-name">Fatoumata A.</div><div class="testi-loc">📍 Yopougon, Abidjan</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Super boutique ! La coque Samsung S24 Ultra est de très bonne qualité. Le paiement Wave est pratique. Je reviens bientôt pour les écouteurs."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MB</div>
+          <div><div class="testi-name">Mamadou B.</div><div class="testi-loc">📍 Marcory, Abidjan</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★☆</div>
+        <p class="testi-text">"La batterie externe Xiaomi 20000mAh est exactement comme décrite. Très bon rapport qualité-prix. Service client très réactif sur WhatsApp."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AC</div>
+          <div><div class="testi-name">Amina C.</div><div class="testi-loc">📍 Plateau, Abidjan</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PAYMENT METHODS ═══ -->
+<section class="pay-section">
+  <div class="pay-section-inner">
+    <div class="section-title serif" style="margin-bottom:.4rem">Modes de <span>paiement</span></div>
+    <p style="color:var(--text2);font-size:.88rem">Nous acceptons les paiements mobiles les plus utilisés en Côte d'Ivoire</p>
+    <div class="pay-methods">
+      <div class="pay-method orange"><span style="font-size:1.4rem">🟠</span><div><div style="font-size:.85rem">Orange Money</div><div style="font-size:.72rem;color:var(--text3)">Paiement mobile CI</div></div></div>
+      <div class="pay-method wave"><span style="font-size:1.4rem">🔵</span><div><div style="font-size:.85rem">Wave CI</div><div style="font-size:.72rem;color:var(--text3)">Transfert instantané</div></div></div>
+      <div class="pay-method whatsapp"><span style="font-size:1.4rem">💬</span><div><div style="font-size:.85rem">Commande WhatsApp</div><div style="font-size:.72rem;color:var(--text3)">+225 07 89 59 64 49</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:.8rem">
+          <div class="logo-mark">A</div>
+          <div class="logo-text-wrap">
+            <span class="logo-name">Abdoul Service</span>
+            <span class="logo-tagline">Accessoires Téléphone · CI</span>
+          </div>
+        </div>
+        <p>Votre boutique de référence pour les accessoires téléphone premium à Abidjan. Qualité garantie, livraison rapide, paiement mobile.</p>
+        <div style="margin-top:1rem;display:flex;gap:.6rem;align-items:center">
+          <span style="font-size:.8rem;color:rgba(255,255,255,.4)">Suivez-nous:</span>
+          <span style="font-size:1.2rem">📘</span>
+          <span style="font-size:1.2rem">📸</span>
+          <span style="font-size:1.2rem">💬</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Produits</h4>
+        <ul>
+          <li><a href="#" onclick="filterCat('Coques')">Coques & Étuis</a></li>
+          <li><a href="#" onclick="filterCat('Chargeurs')">Chargeurs</a></li>
+          <li><a href="#" onclick="filterCat('Audio')">Audio</a></li>
+          <li><a href="#" onclick="filterCat('Câbles')">Câbles</a></li>
+          <li><a href="#" onclick="filterCat('Écrans')">Protection écran</a></li>
+          <li><a href="#" onclick="filterCat('Batteries')">Batteries</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Informations</h4>
+        <ul>
+          <li><a href="#">À propos de nous</a></li>
+          <li><a href="#">Politique de livraison</a></li>
+          <li><a href="#">Politique de retour</a></li>
+          <li><a href="#">Conditions de vente</a></li>
+          <li><a href="#">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/22507895964449">💬 WhatsApp</a></li>
+          <li><a href="tel:+22507895964449">📞 07 89 59 64 49</a></li>
+          <li><a href="#">📍 Abidjan, CI</a></li>
+          <li><a href="#">🕐 Lun–Sam 8h–20h</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 <strong style="color:var(--gold3)">Abdoul Service</strong> — Tous droits réservés · Abidjan, Côte d'Ivoire</p>
+      <div class="footer-pay">
+        <span class="fpay fpay-orange">Orange Money</span>
+        <span class="fpay fpay-wave">Wave CI</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ PRODUCT DETAIL MODAL ═══ -->
+<div class="modal-overlay" id="productOverlay">
+  <div class="product-modal" id="productModal">
+    <div class="pm-img-side" id="pmImgSide">
+      <button class="pm-close" onclick="closeProductModal()">✕</button>
+      <div class="pm-badges-wrap" id="pmBadges"></div>
+      <div id="pmImgWrap"></div>
+    </div>
+    <div class="pm-info-side" id="pmInfoSide"></div>
+  </div>
+</div>
+
+<!-- ═══ CART MODAL ═══ -->
+<div class="modal-overlay" id="cartOverlay">
+  <div class="cart-modal">
+    <div class="cart-header">
+      <div class="cart-title">🛒 Mon Panier</div>
+      <button class="modal-close-btn" onclick="closeCart()">✕</button>
+    </div>
+    <div id="cartBody"></div>
+  </div>
+</div>
+
+<!-- ═══ SUCCESS MODAL ═══ -->
+<div class="modal-overlay" id="successOverlay">
+  <div class="success-modal">
+    <div class="success-icon">✅</div>
+    <div class="success-title">Commande confirmée !</div>
+    <p class="success-msg">Votre commande a été reçue par <strong>Abdoul Service</strong>. Vous recevrez une confirmation par SMS.</p>
+    <div class="success-ref" id="successRef">REF: ABS-...</div>
+    <p style="font-size:.78rem;color:var(--text3)">📦 Livraison estimée : <strong style="color:var(--text)">24–48h à Abidjan</strong></p>
+    <div class="success-actions">
+      <button class="checkout-btn ckbtn-wa2" onclick="openWA();closeSuccess()">💬 Suivre sur WA</button>
+      <button class="checkout-btn ckbtn-def" onclick="closeSuccess()">Continuer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FLOATING WA ═══ -->
+<div class="wa-float">
+  <button class="wa-float-btn" onclick="openWA()">
+    <div class="wa-ping"></div>
+    💬 Commander via WhatsApp
+  </button>
+</div>
+
+<!-- ═══ TOAST CONTAINER ═══ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+const PHONE = '22507895964449';
+
+/* ── IMAGE AIRPODS PRO ── */
+const AIRPODS_IMG = 'data:image/jpeg;base64,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';
+
+/* ── PRODUITS ── */
+const products = [
+  {id:1, name:"Coque iPhone 15 Pro", brand:"Apple Series", price:4500, old:7000, cat:"Coques", emoji:"📱", stars:"★★★★★", badge:"new", img:null, desc:"Coque premium ultra-résistante aux chocs, bords surélevés pour protéger l'écran et la caméra. Matière TPU souple de haute qualité.", tags:["coque","iphone","protection","etui","housse","apple"]},
+  {id:2, name:"Coque Samsung S24 Ultra", brand:"Samsung Series", price:3500, old:5500, cat:"Coques", emoji:"🛡️", stars:"★★★★☆", badge:"promo", img:null, desc:"Protection robuste pour Samsung S24 Ultra. Matière TPU souple anti-chute avec bordure renforcée.", tags:["coque","samsung","protection","etui","housse","galaxy"]},
+  {id:3, name:"Chargeur Rapide 65W", brand:"Anker", price:8500, old:12000, cat:"Chargeurs", emoji:"⚡", stars:"★★★★★", badge:"new", img:null, desc:"Charge ultra rapide 65W compatible USB-C. Recharge votre téléphone en moins de 30 minutes. Compatible iPhone & Android.", tags:["chargeur","rapide","charge","adaptateur","anker"]},
+  {id:4, name:"Chargeur Sans Fil 15W", brand:"Baseus", price:6000, old:9000, cat:"Chargeurs", emoji:"🔋", stars:"★★★★☆", badge:"", img:null, desc:"Chargeur à induction 15W compatible Qi. Discret, élégant et compatible avec tous les smartphones modernes.", tags:["chargeur","sans fil","wireless","induction","baseus"]},
+  {id:5, name:"Écouteurs Bluetooth Pro", brand:"JBL", price:15000, old:22000, cat:"Audio", emoji:"🎧", stars:"★★★★★", badge:"promo", img:null, desc:"Écouteurs Bluetooth haut de gamme JBL avec réduction de bruit active et autonomie de 24h.", tags:["ecouteur","écouteur","bluetooth","casque","audio","son","jbl","musique"]},
+  {id:6, name:"AirPods Pro", brand:"Apple", price:95000, old:120000, cat:"Audio", emoji:"🎧", stars:"★★★★★", badge:"new", img:AIRPODS_IMG, desc:"AirPods Pro Apple avec réduction active du bruit, son spatial et résistance à l'eau IPX4. Autonomie 6h + 24h avec le boîtier.", tags:["ecouteur","écouteur","airpod","airpods","sans fil","bluetooth","audio","casque","apple","pro"]},
+  {id:7, name:"Câble USB-C 2m", brand:"Ugreen", price:2500, old:4000, cat:"Câbles", emoji:"🔌", stars:"★★★★★", badge:"", img:null, desc:"Câble USB-C tressé 2 mètres certifié, charge rapide jusqu'à 60W et transfert de données 480 Mbps.", tags:["cable","câble","usb","usbc","type c","ugreen"]},
+  {id:8, name:"Câble Lightning Tressé", brand:"Belkin", price:3000, old:4500, cat:"Câbles", emoji:"⚡", stars:"★★★★☆", badge:"", img:null, desc:"Câble Lightning certifié MFi pour iPhone/iPad. Tressé nylon résistant avec charge rapide incluse.", tags:["cable","câble","lightning","iphone","belkin"]},
+  {id:9, name:"Verre Trempé iPhone 15", brand:"Spigen", price:2800, old:4200, cat:"Écrans", emoji:"🔒", stars:"★★★★★", badge:"new", img:null, desc:"Verre trempé 9H ultra-transparent pour iPhone 15. Protège contre les rayures et les chocs.", tags:["verre","protecteur","ecran","protection","iphone","film","vitre","spigen"]},
+  {id:10, name:"Film Protecteur Samsung", brand:"Samsung", price:2000, old:3000, cat:"Écrans", emoji:"🛡️", stars:"★★★★☆", badge:"promo", img:null, desc:"Film protecteur officiel Samsung, compatible toute la gamme Galaxy. Application facile sans bulles.", tags:["film","protecteur","ecran","protection","samsung","vitre","verre"]},
+  {id:11, name:"Batterie Externe 20000mAh", brand:"Xiaomi", price:18000, old:25000, cat:"Batteries", emoji:"🔋", stars:"★★★★★", badge:"new", img:null, desc:"Batterie externe 20000mAh avec double port USB et charge rapide 22.5W. Recharge 3 à 4 fois un smartphone.", tags:["batterie","powerbank","power bank","externe","charge","xiaomi"]},
+  {id:12, name:"Mini Powerbank 10000mAh", brand:"Romoss", price:11000, old:16000, cat:"Batteries", emoji:"⚡", stars:"★★★☆☆", badge:"", img:null, desc:"Powerbank compact 10000mAh compatible USB-A et USB-C. Format poche, idéal en déplacement.", tags:["batterie","powerbank","mini","externe","romoss"]},
+  {id:13, name:"Support Voiture Magnétique", brand:"ESR", price:3500, old:5000, cat:"Coques", emoji:"🚗", stars:"★★★★☆", badge:"", img:null, desc:"Support magnétique pour voiture avec fixation grille d'aération. Compatible tous smartphones.", tags:["support","voiture","auto","magnetique","esr"]},
+  {id:14, name:"Câble Multi USB 3-en-1", brand:"Ugreen", price:3200, old:4800, cat:"Câbles", emoji:"🔌", stars:"★★★★★", badge:"promo", img:null, desc:"Câble universel 3-en-1 : USB-C, Lightning et Micro-USB. Un seul câble pour tous vos appareils.", tags:["cable","câble","multi","3en1","universel","usb","ugreen"]},
+  {id:15, name:"Enceinte Bluetooth Mini", brand:"JBL", price:22000, old:30000, cat:"Audio", emoji:"🔊", stars:"★★★★★", badge:"new", img:null, desc:"Enceinte Bluetooth portable JBL étanche IPX7, son puissant 360° et autonomie 12 heures.", tags:["enceinte","bluetooth","audio","son","musique","jbl","speaker"]},
+  {id:16, name:"Coque Cuir Huawei P60", brand:"Huawei Series", price:4000, old:6000, cat:"Coques", emoji:"📦", stars:"★★★★☆", badge:"", img:null, desc:"Étui cuir véritable pour Huawei P60 avec compartiment carte. Élégant et protecteur.", tags:["coque","huawei","cuir","etui","housse","protection"]},
+  {id:17, name:"Câble USB-C Magnétique", brand:"Baseus", price:5500, old:8000, cat:"Câbles", emoji:"🔌", stars:"★★★★☆", badge:"new", img:null, desc:"Câble USB-C magnétique 100W. Connexion et déconnexion instantanée. Compatible laptop et smartphone.", tags:["cable","câble","usb","magnetique","baseus","100w"]},
+  {id:18, name:"Coque iPhone 14 Transparente", brand:"Apple Series", price:3000, old:4500, cat:"Coques", emoji:"📱", stars:"★★★★★", badge:"promo", img:null, desc:"Coque transparente ultra-fine pour iPhone 14. Conserve le design original tout en protégeant.", tags:["coque","iphone","protection","transparente","apple"]},
+];
+
+const catColors = {Audio:'rgba(0,150,214,.1)',Coques:'rgba(184,134,11,.1)',Chargeurs:'rgba(232,93,4,.1)','Câbles':'rgba(139,92,246,.1)',Batteries:'rgba(21,128,61,.1)','Écrans':'rgba(219,39,119,.1)'};
+const catTextColors = {Audio:'#0077A0',Coques:'#8A6A05',Chargeurs:'#A03800','Câbles':'#5B21B6',Batteries:'#166534','Écrans':'#9D174D'};
+
+/* ── HELPERS ── */
+function fmt(p){return new Intl.NumberFormat('fr-CI').format(p)+' FCFA'}
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[éèêë]/g,'e').replace(/[àâä]/g,'a').replace(/[ùûü]/g,'u').replace(/[îï]/g,'i').replace(/[ôö]/g,'o').replace(/ç/g,'c').trim()}
+const synMap={'ecouteur':['écouteur','casque','audio','bluetooth','airpod','son','musique'],'casque':['écouteur','casque','audio','son'],'airpod':['écouteur','airpod','airpods','bluetooth','audio','apple'],'enceinte':['enceinte','speaker','son','audio','musique','bluetooth'],'coque':['coque','etui','housse','protection','cover'],'etui':['coque','etui','housse','protection'],'chargeur':['chargeur','charge','adaptateur','prise'],'cable':['cable','câble','fil','usb','lightning'],'batterie':['batterie','powerbank','power bank','reserve','externe'],'ecran':['ecran','verre','film','protecteur','vitre'],'verre':['ecran','verre','film','protecteur','vitre'],'samsung':['samsung','galaxy'],'iphone':['iphone','apple','lightning'],'huawei':['huawei','p60']};
+function getTerms(q){const n=norm(q);let t=new Set([n]);for(const[k,v] of Object.entries(synMap)){if(n.includes(k)||k.includes(n))v.forEach(x=>t.add(norm(x)))}return[...t]}
+function scoreP(p,terms){const f=[norm(p.name),norm(p.brand),norm(p.cat),...(p.tags||[]).map(norm)];let s=0;for(const t of terms)for(const x of f){if(x===t)s+=10;else if(x.startsWith(t))s+=7;else if(x.includes(t))s+=4}return s}
+function imgCard(p){return p.img?`<img src="${p.img}" alt="${p.name}">`:`<span class="prod-emoji">${p.emoji}</span>`}
+function imgThumb(p){return p.img?`<img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:contain;padding:3px">`:`<span style="font-size:1.5rem">${p.emoji}</span>`}
+
+/* ── STATE ── */
+let cart=[], activecat='all', searchQ='', selPay='';
+
+/* ── DATETIME ── */
+function updateDatetime(){
+  const n=new Date(),j=['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],m=['Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc'];
+  const h=String(n.getHours()).padStart(2,'0'),mn=String(n.getMinutes()).padStart(2,'0'),s=String(n.getSeconds()).padStart(2,'0');
+  document.getElementById('datetime').textContent=`📅 ${j[n.getDay()]} ${n.getDate()} ${m[n.getMonth()]} ${n.getFullYear()} · ⏰ ${h}:${mn}:${s}`;
+}
+setInterval(updateDatetime,1000); updateDatetime();
+
+/* ── TOAST ── */
+function showToast(msg,type='success'){
+  const tc=document.getElementById('toastContainer');
+  const t=document.createElement('div');
+  t.className=`toast${type==='error'?' error':type==='info'?' info':''}`;
+  t.textContent=msg;
+  tc.appendChild(t);
+  requestAnimationFrame(()=>{requestAnimationFrame(()=>t.classList.add('show'))});
+  setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),400)},2800);
+}
+
+/* ── SEARCH ── */
+function buildDropdown(q){
+  const dd=document.getElementById('searchDropdown');
+  if(!q){dd.classList.remove('open');return}
+  const terms=getTerms(q);
+  const matched=products.map(p=>({...p,sc:scoreP(p,terms)})).filter(p=>p.sc>0&&(activecat==='all'||p.cat===activecat)).sort((a,b)=>b.sc-a.sc).slice(0,6);
+  document.getElementById('sdropCount').textContent=matched.length;
+  document.getElementById('sdropLabel').textContent=matched.length?'Résultats':'Aucun résultat';
+  document.getElementById('sdropItems').innerHTML=matched.length
+    ?matched.map(p=>`<div class="sdrop-item" onclick="qs('${norm(p.name)}')">
+        <div class="sdrop-thumb">${imgThumb(p)}</div>
+        <div class="sdrop-body"><div class="sdrop-name">${p.name}</div><div class="sdrop-meta">${p.brand} · ${fmt(p.price)}</div></div>
+        <span class="sdrop-tag" style="background:${catColors[p.cat]||'#eee'};color:${catTextColors[p.cat]||'#666'}">${p.cat}</span>
+        <span class="sdrop-arrow">›</span></div>`).join('')
+    :`<div style="padding:1rem;font-size:.82rem;color:#999;text-align:center">Aucun produit pour <strong style="color:var(--gold)">"${q}"</strong></div>`;
+  dd.classList.add('open');
+}
+function hideDrop(){setTimeout(()=>document.getElementById('searchDropdown').classList.remove('open'),160)}
+function qs(t){
+  document.getElementById('searchInput').value=t; searchQ=t;
+  document.getElementById('searchClear').classList.add('vis');
+  hideDrop(); renderProducts();
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+function doSearch(){hideDrop();renderProducts()}
+function clearSearch(){
+  document.getElementById('searchInput').value=''; searchQ='';
+  document.getElementById('searchClear').classList.remove('vis');
+  document.getElementById('searchDropdown').classList.remove('open');
+  renderProducts();
+}
+
+const si=document.getElementById('searchInput');
+si.addEventListener('focus',()=>{if(searchQ)buildDropdown(searchQ)});
+si.addEventListener('blur',hideDrop);
+si.addEventListener('input',e=>{
+  searchQ=e.target.value;
+  searchQ?document.getElementById('searchClear').classList.add('vis'):document.getElementById('searchClear').classList.remove('vis');
+  buildDropdown(searchQ); renderProducts();
+});
+si.addEventListener('keydown',e=>{if(e.key==='Escape')clearSearch();if(e.key==='Enter'){doSearch();si.blur()}});
+
+/* ── RENDER PRODUCTS ── */
+function renderProducts(){
+  const grid=document.getElementById('productGrid');
+  const sb=document.getElementById('statusBar');
+  const q=searchQ.trim();
+  let res=products.map(p=>{
+    if(activecat!=='all'&&p.cat!==activecat)return null;
+    if(!q)return{...p,sc:0};
+    const terms=getTerms(q),s=scoreP(p,terms);
+    return s>0?{...p,sc:s}:null;
+  }).filter(Boolean);
+  if(q)res.sort((a,b)=>b.sc-a.sc);
+
+  if(q){
+    sb.innerHTML=res.length
+      ?`<div class="status-chip">🔍 ${q} <span class="cnt">${res.length}</span></div><button class="status-clear" onclick="clearSearch()">Effacer la recherche</button>`
+      :`<div style="color:var(--text2);font-size:.82rem">😕 Aucun résultat pour <strong>"${q}"</strong></div><button class="status-clear" onclick="clearSearch()">Réinitialiser</button>`;
+  } else sb.innerHTML='';
+
+  if(!res.length){
+    const tags=['AirPods','Chargeur','Coque iPhone','Batterie','Câble','Verre trempé'];
+    grid.innerHTML=`<div class="no-results">
+      <div class="no-results-icon">😕</div>
+      <p>Aucun produit trouvé pour <strong>"${q}"</strong></p>
+      <div class="no-results-tags">${tags.map(t=>`<span class="no-results-tag" onclick="qs('${t}')">${t}</span>`).join('')}</div>
+    </div>`;
+    return;
+  }
+
+  grid.innerHTML=res.map(p=>{
+    const eco=p.old-p.price;
+    const pct=Math.round(eco/p.old*100);
+    return `<div class="product-card${q&&p.sc>0?' match':''}">
+      <div class="prod-img" onclick="openProduct(${p.id})" title="Cliquer pour voir les détails">
+        ${p.badge==='new'?'<span class="badge badge-new">NOUVEAU</span>':p.badge==='promo'?'<span class="badge badge-promo">PROMO</span>':''}
+        <span class="badge-stock">✓ En stock</span>
+        ${imgCard(p)}
+        <div class="zoom-icon">🔍</div>
+      </div>
+      <div class="prod-info">
+        <div class="prod-cat" style="color:${catTextColors[p.cat]||'var(--gold)'}">${p.cat}</div>
+        <div class="prod-name" onclick="openProduct(${p.id})">${p.name}</div>
+        <div class="prod-brand">${p.brand}</div>
+        <div class="prod-stars">${p.stars}</div>
+        <div class="prod-price-row">
+          <span class="prod-price">${fmt(p.price)}</span>
+          <span class="prod-old">${fmt(p.old)}</span>
+          <span class="prod-eco">-${pct}%</span>
+        </div>
+        <div class="prod-btns">
+          <button class="btn-cart" onclick="addToCart(${p.id})">🛒 Panier</button>
+          <button class="btn-wa-prod" onclick="orderWA(${p.id})">💬 WA</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── CAT FILTER ── */
+document.getElementById('catFilter').addEventListener('click',e=>{
+  const btn=e.target.closest('.cat-pill');
+  if(!btn)return;
+  activecat=btn.dataset.cat;
+  document.querySelectorAll('.cat-pill').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  if(searchQ)buildDropdown(searchQ);
+  renderProducts();
+});
+
+function filterCat(cat){
+  activecat=cat;
+  document.querySelectorAll('.cat-pill').forEach(b=>{b.classList.toggle('active',b.dataset.cat===cat)});
+  renderProducts();
+  document.getElementById('products').scrollIntoView({behavior:'smooth'});
+}
+
+/* ── PRODUCT MODAL ── */
+function openProduct(id){
+  const p=products.find(x=>x.id===id);
+  const eco=p.old-p.price;
+  const pct=Math.round(eco/p.old*100);
+  document.getElementById('pmBadges').innerHTML=
+    (p.badge==='new'?'<span class="badge badge-new">NOUVEAU</span>':'')
+    +(p.badge==='promo'?'<span class="badge badge-promo">PROMO</span>':'');
+  document.getElementById('pmImgWrap').innerHTML=p.img
+    ?`<img class="pm-img-main" src="${p.img}" alt="${p.name}">`
+    :`<span class="pm-emoji-main">${p.emoji}</span>`;
+  document.getElementById('pmInfoSide').innerHTML=`
+    <div class="pm-cat" style="color:${catTextColors[p.cat]||'var(--gold)'}">● ${p.cat}</div>
+    <div class="pm-name">${p.name}</div>
+    <div class="pm-brand">par <strong>${p.brand}</strong></div>
+    <div class="pm-rating"><span class="pm-stars-val">${p.stars}</span><span class="pm-rating-txt">(Note 4.8/5)</span></div>
+    <div class="pm-price-block">
+      <div class="pm-price">${fmt(p.price)}</div>
+      <div class="pm-price-right">
+        <div class="pm-old">${fmt(p.old)}</div>
+        <div class="pm-eco-badge">Économie : ${fmt(eco)} (${pct}%)</div>
+      </div>
+    </div>
+    <div class="pm-desc">${p.desc}</div>
+    <div class="pm-specs">
+      <div class="pm-spec-row"><span class="pm-spec-label">Marque</span><span class="pm-spec-val">${p.brand}</span></div>
+      <div class="pm-spec-row"><span class="pm-spec-label">Catégorie</span><span class="pm-spec-val">${p.cat}</span></div>
+      <div class="pm-spec-row"><span class="pm-spec-label">Disponibilité</span><span class="pm-spec-val ok">✓ En stock</span></div>
+      <div class="pm-spec-row"><span class="pm-spec-label">Livraison</span><span class="pm-spec-val">24–48h Abidjan</span></div>
+      <div class="pm-spec-row"><span class="pm-spec-label">Garantie</span><span class="pm-spec-val">3 mois</span></div>
+      <div class="pm-spec-row"><span class="pm-spec-label">Retour</span><span class="pm-spec-val">7 jours</span></div>
+      <div class="pm-spec-row"><span class="pm-spec-label">Paiement</span><span class="pm-spec-val">Orange Money · Wave</span></div>
+    </div>
+    <div class="pm-actions">
+      <button class="pm-btn-cart" onclick="addToCart(${p.id});closeProductModal()">🛒 Ajouter au panier</button>
+      <button class="pm-btn-wa" onclick="orderWA(${p.id})">💬 Commander via WA</button>
+    </div>`;
+  document.getElementById('productOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeProductModal(){
+  document.getElementById('productOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('productOverlay').addEventListener('click',e=>{
+  if(e.target===document.getElementById('productOverlay'))closeProductModal();
+});
+
+/* ── CART ── */
+function addToCart(id){
+  const p=products.find(x=>x.id===id);
+  const ex=cart.find(x=>x.id===id);
+  if(ex)ex.qty++;else cart.push({...p,qty:1});
+  const total=cart.reduce((a,b)=>a+b.qty,0);
+  const badge=document.getElementById('cartBadge');
+  badge.textContent=total;
+  badge.classList.add('pop');
+  setTimeout(()=>badge.classList.remove('pop'),300);
+  showToast('✅ '+p.name+' ajouté au panier !');
+}
+function removeFromCart(id){
+  cart=cart.filter(x=>x.id!==id);
+  document.getElementById('cartBadge').textContent=cart.reduce((a,b)=>a+b.qty,0);
+  renderCart();
+}
+function changeQty(id,d){
+  const i=cart.find(x=>x.id===id);
+  if(i){i.qty+=d;if(i.qty<=0)cart=cart.filter(x=>x.id!==id)}
+  document.getElementById('cartBadge').textContent=cart.reduce((a,b)=>a+b.qty,0);
+  renderCart();
+}
+
+function openCart(){renderCart();document.getElementById('cartOverlay').classList.add('open');document.body.style.overflow='hidden'}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('cartOverlay').addEventListener('click',e=>{if(e.target===document.getElementById('cartOverlay'))closeCart()});
+
+function renderCart(){
+  const body=document.getElementById('cartBody');
+  if(!cart.length){
+    body.innerHTML='<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>Votre panier est vide</p><p style="font-size:.8rem;margin-top:.3rem">Ajoutez des produits pour passer commande</p></div>';
+    return;
+  }
+  const sub=cart.reduce((a,b)=>a+b.price*b.qty,0);
+  const liv=0;
+  const tot=sub+liv;
+  body.innerHTML=`
+    ${cart.map(c=>`
+      <div class="cart-item">
+        <div class="cart-item-img">${imgThumb(c)}</div>
+        <div class="cart-item-body">
+          <div class="cart-item-name">${c.name}</div>
+          <div class="cart-item-price">${fmt(c.price)} × ${c.qty}</div>
+        </div>
+        <div class="cart-qty-row">
+          <button class="qty-btn" onclick="changeQty(${c.id},-1)">−</button>
+          <span class="qty-val">${c.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${c.id},1)">+</button>
+          <button class="delete-btn" onclick="removeFromCart(${c.id})">🗑</button>
+        </div>
+      </div>`).join('')}
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <div class="cart-summary-row"><span>Sous-total (${cart.reduce((a,b)=>a+b.qty,0)} articles)</span><span>${fmt(sub)}</span></div>
+        <div class="cart-summary-row"><span>Livraison Abidjan</span><span style="color:var(--success);font-weight:600">Gratuite</span></div>
+      </div>
+      <div class="cart-total-row"><span>Total</span><span class="cart-total-amt">${fmt(tot)}</span></div>
+      <div class="pay-step-label">🔐 Choisir votre mode de paiement :</div>
+      <div class="pay-options">
+        <div class="pay-opt orange" id="popt-or" onclick="selPayOpt('or')">
+          <span class="pay-opt-logo">🟠</span>
+          <div class="pay-opt-name">Orange Money</div>
+          <div class="pay-opt-sub">Paiement mobile CI</div>
+        </div>
+        <div class="pay-opt wave2" id="popt-wv" onclick="selPayOpt('wv')">
+          <span class="pay-opt-logo">🔵</span>
+          <div class="pay-opt-name">Wave CI</div>
+          <div class="pay-opt-sub">Transfert rapide</div>
+        </div>
+      </div>
+      <input class="phone-field" id="phoneField" type="tel" placeholder="📞 Entrez votre numéro (07 XX XX XX XX)" maxlength="14">
+      <div class="checkout-btns">
+        <button class="checkout-btn ckbtn-wa2" onclick="sendCartWA()">💬 Commander via WhatsApp</button>
+        <button class="checkout-btn ckbtn-def" id="payBtn" onclick="processPay(${tot})">💳 Payer ${fmt(tot)}</button>
+      </div>
+    </div>`;
+}
+
+function selPayOpt(t){
+  selPay=t;
+  document.querySelectorAll('.pay-opt').forEach(e=>e.classList.remove('sel'));
+  const el=document.getElementById('popt-'+t);
+  if(el)el.classList.add('sel');
+  const btn=document.getElementById('payBtn');
+  if(!btn)return;
+  const tot=cart.reduce((a,b)=>a+b.price*b.qty,0);
+  if(t==='or'){btn.className='checkout-btn ckbtn-orange';btn.textContent='🟠 Payer via Orange Money — '+fmt(tot)}
+  else{btn.className='checkout-btn ckbtn-wave';btn.textContent='🔵 Payer via Wave — '+fmt(tot)}
+}
+
+function processPay(tot){
+  const ph=(document.getElementById('phoneField')||{}).value?.trim();
+  if(!selPay){showToast('⚠️ Veuillez choisir un mode de paiement','error');return}
+  if(!ph||ph.length<8){showToast('⚠️ Entrez un numéro valide','error');return}
+  closeCart();
+  const ref='ABS-'+Date.now().toString().slice(-8).toUpperCase();
+  document.getElementById('successRef').textContent='REF: '+ref+' · '+ph;
+  document.getElementById('successOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  cart=[];selPay='';
+  document.getElementById('cartBadge').textContent='0';
+}
+
+function sendCartWA(){
+  if(!cart.length){showToast('Votre panier est vide','info');return}
+  openWA(cart);
+  closeCart();
+}
+
+function closeSuccess(){document.getElementById('successOverlay').classList.remove('open');document.body.style.overflow=''}
+document.getElementById('successOverlay').addEventListener('click',e=>{if(e.target===document.getElementById('successOverlay'))closeSuccess()});
+
+/* ── WHATSAPP ── */
+function orderWA(id){
+  const p=products.find(x=>x.id===id);
+  const msg=`Bonjour Abdoul Service ! Je souhaite commander :\n\n🛍️ *${p.name}*\n💰 Prix : ${fmt(p.price)}\n\nMerci de confirmer la disponibilité et de me donner les détails de livraison.`;
+  window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+function openWA(items){
+  let msg;
+  if(items&&items.length){
+    const lines=items.map(c=>`• ${c.name} × ${c.qty} = ${fmt(c.price*c.qty)}`).join('\n');
+    const tot=items.reduce((a,b)=>a+b.price*b.qty,0);
+    msg=`Bonjour Abdoul Service ! Je voudrais passer cette commande :\n\n${lines}\n\n💰 *Total : ${fmt(tot)}*\n\nMerci de confirmer et de me donner les modalités de livraison.`;
+  }else{
+    msg='Bonjour Abdoul Service ! Je souhaite passer une commande. Pouvez-vous m\'aider ? 😊';
+  }
+  window.open(`https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`,'_blank');
+}
+
+/* ── MODALS CLOSE ON ESCAPE ── */
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    closeProductModal();closeCart();closeSuccess();
+  }
+});
+
+/* ── INIT ── */
+renderProducts();
+</script>
+</body>
+</html>
